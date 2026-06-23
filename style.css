@@ -1,0 +1,199 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ffffff;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+
+    margin-bottom: 40px;
+}
+
+/* =========================
+   CLOCK FACE
+========================= */
+
+.clock {
+    position: relative;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   TICK MARKS
+========================= */
+
+.ticks {
+    position: absolute;
+    inset: 0;
+}
+
+.tick {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform-origin: center 175px;
+}
+
+/* Main hour marks */
+
+.tick.hour-mark {
+    width: 4px;
+    height: 22px;
+
+    background: #222;
+
+    border-radius: 2px;
+
+    margin-left: -2px;
+}
+
+/* Minute marks */
+
+.tick.minute-mark {
+    width: 2px;
+    height: 12px;
+
+    background: #b5b5b5;
+
+    border-radius: 1px;
+
+    margin-left: -1px;
+}
+
+/* =========================
+   CLOCK HANDS
+========================= */
+
+.hand {
+    position: absolute;
+
+    left: 50%;
+    bottom: 50%;
+
+    transform-origin: bottom center;
+
+    border-radius: 20px;
+}
+
+/* Hour Hand */
+
+.hour-hand {
+    width: 8px;
+    height: 75px;
+
+    background: #333;
+
+    margin-left: -4px;
+
+    z-index: 5;
+}
+
+/* Minute Hand */
+
+.minute-hand {
+    width: 5px;
+    height: 110px;
+
+    background: #444;
+
+    margin-left: -2.5px;
+
+    z-index: 4;
+}
+
+/* Second Hand */
+
+.second-hand {
+    width: 2px;
+    height: 130px;
+
+    background: #ff2d2d;
+
+    margin-left: -1px;
+
+    z-index: 6;
+}
+
+/* =========================
+   CENTER PIN
+========================= */
+
+.center-pin {
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    background: #000;
+
+    border-radius: 50%;
+
+    z-index: 10;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+
+    .clock {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tick {
+        transform-origin: center 140px;
+    }
+
+    .hour-hand {
+        height: 60px;
+    }
+
+    .minute-hand {
+        height: 90px;
+    }
+
+    .second-hand {
+        height: 105px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}
